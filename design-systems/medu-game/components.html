@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>medu.game — component fixture</title>
+    <meta
+      name="description"
+      content="Standalone component fixture for the medu.game design system: pill buttons, ink-tinted cards, badges, fields, and the dual-pink + dark-blue palette, driven entirely by tokens.css."
+    />
+    <style>
+      /* ── Canonical token bindings — byte-equivalent to tokens.css :root ── */
+      :root {
+        /* Surface */
+        --bg: #FBF9F7;
+        --surface: #FFFFFF;
+        --surface-warm: #FFF4F4;
+
+        /* Foreground */
+        --fg: #000048;
+        --fg-2: rgba(0, 0, 72, 0.8);
+        --muted: rgba(0, 0, 72, 0.6);
+        --meta: rgba(0, 0, 72, 0.4);
+
+        /* Border */
+        --border: rgba(0, 0, 72, 0.1);
+        --border-soft: rgba(0, 0, 72, 0.05);
+
+        /* Accent */
+        --accent: #141484;
+        --accent-on: #FFE0E0;
+        --accent-hover: #0A0A66;
+        --accent-active: #000048;
+
+        /* Semantic */
+        --success: #16a34a;
+        --warn: #eab308;
+        --danger: #dc2626;
+
+        /* Typography — fonts */
+        --font-display: "MuseoModerno", "Quicksand", system-ui, sans-serif;
+        --font-body: "Fieldwork Geo", "Nunito", system-ui, sans-serif;
+        --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+
+        /* Typography — type scale */
+        --text-xs: 12px;
+        --text-sm: 14px;
+        --text-base: 16px;
+        --text-lg: 18px;
+        --text-xl: 22px;
+        --text-2xl: clamp(28px, 3vw, 40px);
+        --text-3xl: clamp(36px, 4.4vw, 56px);
+        --text-4xl: clamp(48px, 6vw, 84px);
+
+        /* Typography — leading & tracking */
+        --leading-body: 1.55;
+        --leading-tight: 1.15;
+        --tracking-display: -0.01em;
+
+        /* Spacing — base scale (name == px) */
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 20px;
+        --space-6: 24px;
+        --space-8: 32px;
+        --space-12: 48px;
+
+        /* Section rhythm */
+        --section-y-desktop: 120px;
+        --section-y-tablet: 80px;
+        --section-y-phone: 56px;
+
+        /* Radius — the pill is the brand signature */
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --radius-pill: 999px;
+
+        /* Elevation — ink-tinted, never neutral black */
+        --elev-flat: none;
+        --elev-ring: 0 0 0 1px var(--border);
+        --elev-raised: 0 2px 8px rgba(0, 0, 72, 0.08), 0 12px 32px rgba(0, 0, 72, 0.06);
+
+        /* Focus — deep-blue edge + pink-light ring */
+        --focus-ring: 0 0 0 2px #000048, 0 0 0 6px #FFE0E0;
+
+        /* Motion — calm: fade, never bounce */
+        --motion-fast: 140ms;
+        --motion-base: 240ms;
+        --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+
+        /* Layout */
+        --container-max: 1400px;
+        --container-gutter-desktop: 64px;
+        --container-gutter-tablet: 40px;
+        --container-gutter-phone: 24px;
+      }
+
+      /* ── Reset & page ────────────────────────────────────────────── */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: var(--font-body);
+        font-size: var(--text-base);
+        line-height: var(--leading-body);
+      }
+
+      /* ── Layout primitives ───────────────────────────────────────── */
+      .container {
+        max-width: var(--container-max);
+        margin-inline: auto;
+        padding-inline: var(--container-gutter-desktop);
+      }
+      section {
+        padding-block: var(--section-y-desktop);
+      }
+      .stack-3 > * + * {
+        margin-top: var(--space-3);
+      }
+      .stack-4 > * + * {
+        margin-top: var(--space-4);
+      }
+      .stack-6 > * + * {
+        margin-top: var(--space-6);
+      }
+      .row-between {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+      }
+      .grid {
+        display: grid;
+        gap: var(--space-6);
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      /* ── Typography ──────────────────────────────────────────────── */
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-body);
+        font-weight: 600;
+        line-height: var(--leading-tight);
+        margin: 0;
+        color: var(--fg);
+      }
+      h1 {
+        font-size: var(--text-3xl);
+      }
+      h2 {
+        font-size: var(--text-2xl);
+      }
+      h3 {
+        font-size: var(--text-xl);
+      }
+      .display {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: var(--text-4xl);
+        line-height: 1.05;
+        letter-spacing: var(--tracking-display);
+        margin: 0;
+      }
+      .display .dot {
+        color: var(--accent);
+      }
+      .eyebrow {
+        font-size: var(--text-xs);
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        margin: 0;
+      }
+      .lead {
+        font-size: var(--text-lg);
+        color: var(--fg-2);
+        margin: 0;
+      }
+      .body-sm {
+        font-size: var(--text-sm);
+      }
+      .body-muted {
+        color: var(--muted);
+      }
+      p {
+        margin: 0;
+      }
+
+      /* ── Links ───────────────────────────────────────────────────── */
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: color var(--motion-fast) var(--ease-standard);
+      }
+      a:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+      a:focus-visible {
+        outline: none;
+        border-radius: var(--radius-sm);
+        box-shadow: var(--focus-ring);
+      }
+      .link-meta {
+        color: var(--meta);
+        font-size: var(--text-sm);
+      }
+
+      /* ── Buttons — always pill ───────────────────────────────────── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: 13px 24px;
+        border: none;
+        border-radius: var(--radius-pill);
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: var(--text-base);
+        cursor: pointer;
+        transition:
+          transform var(--motion-fast) var(--ease-standard),
+          background var(--motion-fast) var(--ease-standard);
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn:active {
+        transform: none;
+        opacity: 0.9;
+      }
+      .btn:focus-visible {
+        outline: none;
+        box-shadow: var(--focus-ring);
+      }
+      .btn[disabled] {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: var(--accent-on);
+      }
+      .btn-primary:hover {
+        background: var(--accent-hover);
+      }
+      .btn-primary:active {
+        background: var(--accent-active);
+      }
+      .btn-secondary {
+        background: var(--surface-warm);
+        color: var(--fg);
+      }
+      .btn-secondary:hover {
+        background: var(--accent-on);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--fg);
+        box-shadow: inset 0 0 0 2px var(--fg);
+      }
+      .btn-ghost:hover {
+        background: var(--fg);
+        color: var(--bg);
+      }
+      .icon {
+        width: var(--space-4);
+        height: var(--space-4);
+        display: inline-block;
+      }
+
+      /* ── Badges — pill, brand variants ───────────────────────────── */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-1) var(--space-3);
+        border-radius: var(--radius-pill);
+        font-size: var(--text-xs);
+        font-weight: 600;
+      }
+      .badge-pink {
+        background: var(--surface-warm);
+        color: var(--fg);
+      }
+      .badge-blue {
+        background: var(--accent);
+        color: var(--accent-on);
+      }
+      .badge-outline {
+        background: transparent;
+        color: var(--fg-2);
+        box-shadow: inset 0 0 0 1px var(--border);
+      }
+      .badge-dot {
+        width: var(--space-2);
+        height: var(--space-2);
+        border-radius: var(--radius-pill);
+        background: var(--accent);
+      }
+
+      /* ── Cards — no border, shadow does the work ─────────────────── */
+      .card {
+        background: var(--surface);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--elev-raised);
+        padding: var(--space-8);
+        transition: transform var(--motion-base) var(--ease-standard);
+      }
+      .card:hover {
+        transform: translateY(-2px);
+      }
+      .card-ring {
+        background: var(--surface);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--elev-ring);
+        padding: var(--space-6);
+      }
+      .metric {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: var(--text-2xl);
+        color: var(--accent);
+      }
+      .metric-label {
+        font-size: var(--text-sm);
+        color: var(--muted);
+      }
+
+      /* ── Form fields ─────────────────────────────────────────────── */
+      .field {
+        display: block;
+      }
+      .field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: var(--space-2);
+        color: var(--fg);
+      }
+      .field input,
+      .field textarea {
+        width: 100%;
+        padding: var(--space-3) var(--space-4);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--fg);
+        font-family: var(--font-body);
+        font-size: var(--text-base);
+      }
+      .field input::placeholder {
+        color: var(--meta);
+      }
+      .field input:focus-visible,
+      .field textarea:focus-visible {
+        outline: none;
+        border-color: var(--accent-active);
+        box-shadow: var(--focus-ring);
+      }
+
+      /* ── Keyboard hint ───────────────────────────────────────────── */
+      kbd {
+        font-family: var(--font-mono);
+        font-size: var(--text-xs);
+        padding: var(--space-1) var(--space-2);
+        border-radius: var(--radius-sm);
+        background: var(--surface-warm);
+        box-shadow: var(--elev-ring);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container stack-6">
+      <section class="stack-6">
+        <div class="row-between">
+          <p class="eyebrow">design system</p>
+          <span class="badge badge-blue"><span class="badge-dot"></span>live</span>
+        </div>
+        <h1 class="display">medu<span class="dot">.</span>game</h1>
+        <p class="lead">Hét digitale leerplatform voor zorgprofessionals.</p>
+        <div class="row-between">
+          <div class="stack-3">
+            <button class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"></svg>
+              start je proefperiode
+            </button>
+          </div>
+          <a href="#scenario">bekijk scenario</a>
+        </div>
+        <div class="stack-4">
+          <button class="btn btn-secondary">plan een demo</button>
+          <button class="btn btn-ghost">meer weten</button>
+          <button class="btn btn-primary" disabled>verstuurd</button>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card stack-3">
+          <h3>scenario-feedback</h3>
+          <p class="body-muted body-sm">je krijgt na elke beslissing directe feedback.</p>
+          <p class="metric">8,5<span class="metric-label"> uur leertijd</span></p>
+        </article>
+        <article class="card stack-3">
+          <h2>badges</h2>
+          <div class="stack-3">
+            <span class="badge badge-pink">nieuw</span>
+            <span class="badge badge-outline">optioneel</span>
+            <span class="badge badge-blue">acute zorg</span>
+          </div>
+        </article>
+        <article class="card-ring stack-4">
+          <h3>plan een demo</h3>
+          <form class="stack-4">
+            <div class="field">
+              <label for="naam">naam</label>
+              <input id="naam" type="text" placeholder="je naam" />
+            </div>
+            <div class="field">
+              <label for="mail">e-mailadres</label>
+              <input id="mail" type="email" placeholder="naam@medu.health" />
+            </div>
+            <button class="btn btn-primary" type="submit">verstuur</button>
+            <p class="link-meta">druk op <kbd>Enter</kbd> om te versturen</p>
+          </form>
+        </article>
+      </section>
+
+      <footer class="row-between">
+        <p class="body-sm body-muted">www.medu.health</p>
+        <a class="link-meta" href="#top">terug naar boven</a>
+      </footer>
+    </main>
+  </body>
+</html>

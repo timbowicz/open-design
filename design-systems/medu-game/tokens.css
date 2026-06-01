@@ -1,0 +1,126 @@
+/* ─────────────────────────────────────────────────────────────────────────
+ * design-systems/medu-game/tokens.css
+ *
+ * Structured token bindings for "medu.game" — a Dutch-first healthcare &
+ * education brand: dual-pink + dark-blue palette, pill-shaped buttons,
+ * MuseoModerno display + Fieldwork Geo body, calm motion, ink-tinted
+ * shadows (never neutral black).
+ *
+ * This file pre-compiles the values described in `DESIGN.md` into the
+ * shared OD token schema (design-systems/_schema/tokens.schema.ts).
+ * Agents generating a medu.game artifact should paste the `:root { … }`
+ * block verbatim into the first `<style>` of the artifact, then reference
+ * every value through `var(--name)` — never re-author the hex inline.
+ * `components.html` is the round-trip proof that this token block alone
+ * is enough to render a recognisably medu.game page.
+ *
+ * Brand-binding decisions (medu N tags):
+ *   #medu 1  — `--bg` binds to the warm off-white (#FBF9F7), not pure
+ *              white, so pages carry the brand's soft warmth; `--surface`
+ *              is the white card stop that lifts on it.
+ *   #medu 2  — `--surface-warm` binds the near-white pink (#FFF4F4) used
+ *              for subtle panels — an independent third surface tier, not
+ *              an alias.
+ *   #medu 3  — 3-tier ink foreground (80% / 60% / 40% of #000048) for
+ *              fg-2 / muted / meta. The brand forbids neutral grey, so
+ *              every soft text tier is a tint of the deep brand blue.
+ *   #medu 4  — `--accent` is the bright brand blue #141484 (links + CTAs)
+ *              with pink-light (#FFE0E0) text on it — literally the brand
+ *              primary button. Hover/active darken toward #000048.
+ *   #medu 5  — `--focus-ring` layers a deep-blue inner edge + a pink-light
+ *              outer ring, the brand's "dark-blue border + 4px pink-light
+ *              ring" focus, expressed as a single box-shadow.
+ *   #medu 6  — `--elev-raised` carries the brand's ink-tinted multi-layer
+ *              shadow (rgba(0,0,72,*)); rebinding it to a neutral drop
+ *              shadow would erase the brand atmosphere.
+ *   #medu 7  — pill radius (999px) is the signature; it echoes the loops
+ *              of the logomark and is non-negotiable for buttons/badges.
+ * ─────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Surface */
+  --bg: #FBF9F7;
+  --surface: #FFFFFF;
+  --surface-warm: #FFF4F4;
+
+  /* Foreground */
+  --fg: #000048;
+  --fg-2: rgba(0, 0, 72, 0.8);
+  --muted: rgba(0, 0, 72, 0.6);
+  --meta: rgba(0, 0, 72, 0.4);
+
+  /* Border */
+  --border: rgba(0, 0, 72, 0.1);
+  --border-soft: rgba(0, 0, 72, 0.05);
+
+  /* Accent */
+  --accent: #141484;
+  --accent-on: #FFE0E0;
+  --accent-hover: #0A0A66;
+  --accent-active: #000048;
+
+  /* Semantic */
+  --success: #16a34a;
+  --warn: #eab308;
+  --danger: #dc2626;
+
+  /* Typography — fonts */
+  --font-display: "MuseoModerno", "Quicksand", system-ui, sans-serif;
+  --font-body: "Fieldwork Geo", "Nunito", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+
+  /* Typography — type scale */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: clamp(28px, 3vw, 40px);
+  --text-3xl: clamp(36px, 4.4vw, 56px);
+  --text-4xl: clamp(48px, 6vw, 84px);
+
+  /* Typography — leading & tracking */
+  --leading-body: 1.55;
+  --leading-tight: 1.15;
+  --tracking-display: -0.01em;
+
+  /* Spacing — base scale (name == px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  /* Section rhythm */
+  --section-y-desktop: 120px;
+  --section-y-tablet: 80px;
+  --section-y-phone: 56px;
+
+  /* Radius — the pill is the brand signature */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Elevation — ink-tinted, never neutral black */
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: 0 2px 8px rgba(0, 0, 72, 0.08), 0 12px 32px rgba(0, 0, 72, 0.06);
+
+  /* Focus — deep-blue edge + pink-light ring */
+  --focus-ring: 0 0 0 2px #000048, 0 0 0 6px #FFE0E0;
+
+  /* Motion — calm: fade, never bounce */
+  --motion-fast: 140ms;
+  --motion-base: 240ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Layout */
+  --container-max: 1400px;
+  --container-gutter-desktop: 64px;
+  --container-gutter-tablet: 40px;
+  --container-gutter-phone: 24px;
+}

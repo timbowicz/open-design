@@ -1,0 +1,219 @@
+/* ================================================================
+   Medu.game — Colors & Typography
+   ================================================================
+   Brand source: Huisstijlhandboek Medu.Health.pdf
+   Medu.game inherits the Medu.health visual system.
+================================================================ */
+
+/* --- Fonts ------------------------------------------------------ */
+@font-face {
+  font-family: "MuseoModerno";
+  src: url("./fonts/MuseoModerno-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fieldwork Geo";
+  src: url("./fonts/Fieldwork-Geo-Light.otf") format("opentype");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fieldwork Geo";
+  src: url("./fonts/Fieldwork-Geo-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fieldwork Geo";
+  src: url("./fonts/Fieldwork-Geo-Demibold.otf") format("opentype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  /* ----- Brand colors (from huisstijlhandboek) ----- */
+  --medu-pink-light: #FFE0E0;        /* light pink — soft fills, page bg accents */
+  --medu-pink: #FFC8C7;              /* darker pink — primary accent / logo shadow */
+  --medu-blue: #141484;              /* blue — primary brand */
+  --medu-blue-dark: #000048;         /* dark blue — text, deep surfaces */
+  --medu-white: #FFFFFF;
+
+  /* Subtle tint extensions for UI scaffolding (not in printed guide; semantic neighbors) */
+  --medu-pink-50: #FFF4F4;           /* near-white pink, for panel bgs */
+  --medu-blue-700: #0A0A66;          /* hover state for primary blue */
+  --medu-ink-60: rgba(0, 0, 72, 0.6);
+  --medu-ink-40: rgba(0, 0, 72, 0.4);
+  --medu-ink-20: rgba(0, 0, 72, 0.2);
+  --medu-ink-10: rgba(0, 0, 72, 0.1);
+  --medu-ink-05: rgba(0, 0, 72, 0.05);
+
+  /* ----- Semantic foreground / background ----- */
+  --bg: var(--medu-white);
+  --bg-soft: var(--medu-pink-50);
+  --bg-pink: var(--medu-pink-light);
+  --bg-pink-strong: var(--medu-pink);
+  --bg-deep: var(--medu-blue-dark);
+  --bg-blue: var(--medu-blue);
+
+  --fg: var(--medu-blue-dark);       /* default body color is dark blue */
+  --fg-1: var(--medu-blue-dark);     /* primary text */
+  --fg-2: var(--medu-blue);          /* secondary text / links */
+  --fg-3: var(--medu-ink-60);        /* tertiary text */
+  --fg-mute: var(--medu-ink-40);     /* placeholder / disabled */
+  --fg-on-dark: var(--medu-white);
+
+  --accent: var(--medu-pink);
+  --accent-soft: var(--medu-pink-light);
+
+  /* ----- Type families ----- */
+  --font-display: "MuseoModerno", "Quicksand", system-ui, sans-serif;
+  --font-body: "Fieldwork Geo", "Nunito", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+
+  /* ----- Type scale ----- */
+  --fs-display:  clamp(48px, 6vw, 84px);
+  --fs-h1:       clamp(36px, 4.4vw, 56px);
+  --fs-h2:       clamp(28px, 3vw, 40px);
+  --fs-h3:       22px;
+  --fs-h4:       18px;
+  --fs-body:     16px;
+  --fs-small:    14px;
+  --fs-tiny:     12px;
+
+  --lh-display:  1.05;
+  --lh-heading:  1.15;
+  --lh-body:     1.55;
+
+  /* ----- Spacing (4pt base; numeric == pixels) ----- */
+  /* Aligned with Design System v2 — name == px value, makes Moodle/marketing handoff trivial. */
+  --space-1: 4px;        /* hair */
+  --space-2: 8px;        /* tight */
+  --space-3: 12px;
+  --space-4: 16px;       /* base */
+  --space-6: 24px;       /* comfy */
+  --space-8: 32px;       /* section */
+  --space-12: 48px;      /* block lead */
+  --space-14: 56px;      /* block */
+  --space-20: 80px;      /* band */
+  --space-30: 120px;     /* hero */
+
+  /* Legacy aliases — old code in this repo references --space-5..9. Keep working. */
+  --space-5: 24px;       /* alias of --space-6 */
+  --space-7: 48px;       /* alias of --space-12 */
+  --space-9: 96px;
+
+  /* ----- Radii (v2 scale: 6 / 12 / 20 / pill) ----- */
+  --radius-sm: 6px;       /* input · chip */
+  --radius-md: 12px;      /* field · tag · small card */
+  --radius-lg: 20px;      /* card · section · panel */
+  --radius-pill: 999px;   /* button · badge — matches the logo's pill DNA */
+  --radius-xs: 6px;       /* alias for legacy refs */
+
+  /* ----- Shadows (v2: bluer ink, more depth) ----- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 72, 0.06), 0 2px 6px rgba(0, 0, 72, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 72, 0.08), 0 12px 32px rgba(0, 0, 72, 0.06);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 72, 0.12), 0 2px 6px rgba(0, 0, 72, 0.06);
+
+  /* Legacy semantic aliases — kept so existing components keep working. */
+  --shadow-card: var(--shadow-md);
+  --shadow-card-hover: var(--shadow-lg);
+  --shadow-pop: var(--shadow-lg);
+  --shadow-inset: inset 0 0 0 1px rgba(0, 0, 72, 0.08);
+
+  /* ----- Borders ----- */
+  --border-thin: 1px solid var(--medu-ink-10);
+  --border-mid:  1.5px solid var(--medu-ink-20);
+  --border-strong: 2px solid var(--medu-blue-dark);
+
+  /* ----- Motion ----- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-mid: 240ms;
+  --dur-slow: 420ms;
+}
+
+/* ================================================================
+   Semantic typography classes
+================================================================ */
+.medu-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+  text-transform: lowercase;
+}
+.medu-h1 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-heading);
+  color: var(--fg-1);
+  letter-spacing: -0.005em;
+}
+.medu-h2 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  color: var(--fg-1);
+}
+.medu-h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: 1.25;
+  color: var(--fg-1);
+}
+.medu-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-tiny);
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--fg-2);
+}
+.medu-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+}
+.medu-body-strong {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+}
+.medu-small {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+.medu-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: var(--fg-2);
+}
+
+/* ================================================================
+   Patterns — exposed as background-image utilities
+================================================================ */
+.medu-pattern-pink {
+  background-color: var(--medu-pink-light);
+  background-image: url("./assets/pattern-pink.svg");
+  background-size: 220px 220px;
+}
+.medu-pattern-blue {
+  background-color: var(--medu-blue-dark);
+  background-image: url("./assets/pattern-blue.svg");
+  background-size: 220px 220px;
+}

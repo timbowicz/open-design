@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>medu.game — design system</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<link rel="stylesheet" href="design-system.css" />
+</head>
+<body data-screen-label="00 Design System">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-logo">
+      <img src="brand/logos/logo-oneline.png" alt="medu.game" />
+    </div>
+    <nav class="topnav">
+      <a href="#color">kleur</a>
+      <a href="#type">typografie</a>
+      <a href="#logo">logo</a>
+      <a href="#pattern">patroon</a>
+      <a href="#components">componenten</a>
+      <a href="#tokens">spacing</a>
+      <a href="#icons">iconen</a>
+      <a href="#web">web patterns</a>
+      <a href="#characters">characters</a>
+      <a href="#voice">voice</a>
+    </nav>
+    <div class="topbar-tag">v3.0 · canonical</div>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- Hero -->
+  <section class="hero" id="foundation" data-screen-label="01 Hero">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="pulse"></span>brand system</span>
+        <h1 class="hero-title">hét digitale<br/>leerplatform<span class="dot">.</span></h1>
+        <p class="hero-lede">Eén canvas voor medu.game — kleur, typografie, tokens, componenten, web-patronen en de cast van 3D-characters. Gebouwd op het huisstijlhandboek van medu.health.</p>
+        <div class="hero-meta">
+          <div class="item"><div class="k">systeem</div><div class="v">medu.game</div></div>
+          <div class="item"><div class="k">versie</div><div class="v">3.0</div></div>
+          <div class="item"><div class="k">taal</div><div class="v">nederlands</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <span class="badge-corner">cast · pink shirt</span>
+        <img src="brand/characters/expert-holding-ipad-01-pink.png" alt="medu.game guide met tablet" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 Color -->
+  <section class="block" id="color" data-screen-label="02 Color">
+    <div class="section-head">
+      <div class="section-num">01 — kleur</div>
+      <div>
+        <h2 class="section-title">zacht roze, diep blauw — een duo dat puls en rust in balans houdt.</h2>
+        <p class="section-lede">Dark blue draagt het merk; pink geeft het warmte. Light en darker pink werken als achtergrond en accent — dark blue is altijd de structurele ink.</p>
+      </div>
+    </div>
+
+    <div class="palette">
+      <div class="swatch sw-lp">
+        <div><div class="name">light pink</div><div class="role">background · surface</div></div>
+        <div class="codes"><div><span class="lbl">HEX</span> #FFE0E0</div><div><span class="lbl">RGB</span> 255 · 224 · 224</div><div><span class="lbl">CMYK</span> 0 · 18 · 9 · 0</div><div><span class="lbl">VAR</span> --medu-pink-light</div></div>
+      </div>
+      <div class="swatch sw-dp">
+        <div><div class="name">darker pink</div><div class="role">accent · highlight</div></div>
+        <div class="codes"><div><span class="lbl">HEX</span> #FFC8C7</div><div><span class="lbl">RGB</span> 255 · 200 · 199</div><div><span class="lbl">CMYK</span> 0 · 30 · 15 · 0</div><div><span class="lbl">VAR</span> --medu-pink</div></div>
+      </div>
+      <div class="swatch sw-b">
+        <div><div class="name">blue</div><div class="role">interactive · link</div></div>
+        <div class="codes"><div><span class="lbl">HEX</span> #141484</div><div><span class="lbl">RGB</span> 20 · 20 · 132</div><div><span class="lbl">CMYK</span> 100 · 94 · 23 · 6</div><div><span class="lbl">VAR</span> --medu-blue</div></div>
+      </div>
+      <div class="swatch sw-db">
+        <div><div class="name">dark blue</div><div class="role">primary · ink</div></div>
+        <div class="codes"><div><span class="lbl">HEX</span> #000048</div><div><span class="lbl">RGB</span> 0 · 0 · 72</div><div><span class="lbl">CMYK</span> 100 · 93 · 39 · 52</div><div><span class="lbl">VAR</span> --medu-blue-dark</div></div>
+      </div>
+    </div>
+
+    <div class="neutrals">
+      <div class="chip" style="background:#FBF9F7"><span class="n">off white</span><span class="h">#FBF9F7</span></div>
+      <div class="chip" style="background:#FFFFFF"><span class="n">white</span><span class="h">#FFFFFF</span></div>
+      <div class="chip" style="background:rgba(0,0,72,0.05); color:#000048"><span class="n">ink 05</span><span class="h">rgba(0,0,72,.05)</span></div>
+      <div class="chip" style="background:rgba(0,0,72,0.10); color:#000048"><span class="n">ink 10</span><span class="h">rgba(0,0,72,.10)</span></div>
+      <div class="chip" style="background:rgba(0,0,72,0.40); color:#fff"><span class="n">ink 40</span><span class="h">rgba(0,0,72,.40)</span></div>
+      <div class="chip" style="background:rgba(0,0,72,0.60); color:#fff"><span class="n">ink 60</span><span class="h">rgba(0,0,72,.60)</span></div>
+    </div>
+  </section>
+
+  <!-- 02 Typografie -->
+  <section class="block" id="type" data-screen-label="03 Type">
+    <div class="section-head">
+      <div class="section-num">02 — typografie</div>
+      <div>
+        <h2 class="section-title">museomoderno voor karakter. fieldwork geo voor tekst.</h2>
+        <p class="section-lede">Display momenten in MuseoModerno Medium (lowercase, signature van de wordmark). Body en UI in Fieldwork Geo — Light voor copy, Regular voor sub-titels, Demibold voor knoppen en H1.</p>
+      </div>
+    </div>
+
+    <div class="type-stack">
+      <div>
+        <div class="type-meta">display<span class="mono">museomoderno · medium 500 · 84/88</span></div>
+        <div class="type-sample t-display">medu<span style="color:var(--medu-pink)">.</span>game</div>
+      </div>
+      <div>
+        <div class="type-meta">h1 · titel<span class="mono">fieldwork geo · demibold 600 · 56/64</span></div>
+        <div class="type-sample t-h1">leer op jouw tempo, op elk moment van je dienst.</div>
+      </div>
+      <div>
+        <div class="type-meta">h2 · sectie<span class="mono">fieldwork geo · demibold 600 · 40/46</span></div>
+        <div class="type-sample t-h2">voor zorgprofessionals — door zorgprofessionals.</div>
+      </div>
+      <div>
+        <div class="type-meta">subhead<span class="mono">fieldwork geo · regular 400 · 22/29</span></div>
+        <div class="type-sample t-subhead">Verdieping in de praktijk, zonder de ballast van een klaslokaal.</div>
+      </div>
+      <div>
+        <div class="type-meta">body<span class="mono">fieldwork geo · light 300 · 17/27</span></div>
+        <div class="type-sample t-body">Medu.game brengt microleren, serious games en casuïstiek samen in één platform. Zorgprofessionals oefenen klinisch redeneren via korte sessies die passen tussen de rondes door — met content die getoetst is aan actuele richtlijnen.</div>
+      </div>
+      <div>
+        <div class="type-meta">caption<span class="mono">fieldwork geo · demibold 600 · 12 · tracking 0.14em</span></div>
+        <div class="type-sample t-small">module · 04 · klinisch redeneren</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Logo -->
+  <section class="block" id="logo" data-screen-label="04 Logo">
+    <div class="section-head">
+      <div class="section-num">03 — logo</div>
+      <div>
+        <h2 class="section-title">het merk, klaar voor iedere ondergrond.</h2>
+        <p class="section-lede">Het logo bestaat uit een woordmerk en een beeldmerk: de golfvorm die kennis, puls en beweging samenbrengt. Gebruik minimaal 110 px op screen.</p>
+      </div>
+    </div>
+
+    <div class="logo-grid">
+      <div class="logo-card lc-primary">
+        <span class="tag">primair · horizontaal</span>
+        <img src="brand/logos/logo-full.png" alt="medu.game logo primair" />
+      </div>
+      <div class="logo-card lc-dark">
+        <span class="tag">donkerblauw</span>
+        <img src="brand/icons/icon-blue-bg.png" alt="" />
+      </div>
+      <div class="logo-card lc-pink">
+        <span class="tag">darker pink</span>
+        <img src="brand/icons/icon-pink-bg.png" alt="" />
+      </div>
+      <div class="logo-card lc-light">
+        <span class="tag">light pink</span>
+        <img src="brand/logos/logo-oneline.png" alt="" style="max-height:100px" />
+      </div>
+      <div class="logo-card" style="background:var(--medu-white)">
+        <span class="tag" style="color:var(--medu-ink-60)">white · icon</span>
+        <img src="brand/icons/icon-white-bg.png" alt="" style="max-height:200px" />
+      </div>
+    </div>
+
+    <div class="clear-space">
+      <div class="rule-card">
+        <h4>vrije ruimte</h4>
+        <p>Houd rondom het logo minimaal één 'lusbreedte' als veilige marge. Niets mag deze ruimte doorkruisen.</p>
+        <div class="rule-vis">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="40" y="40" width="320" height="120" fill="none" stroke="rgba(0,0,72,0.3)" stroke-dasharray="4 6" />
+            <rect x="80" y="72" width="240" height="56" fill="none" stroke="rgba(0,0,72,0.5)" stroke-dasharray="2 3" />
+            <g stroke="#000048" stroke-width="6" stroke-linecap="round" fill="none" transform="translate(100 80)">
+              <path d="M0 36 V16 a8 8 0 0 1 16 0 V56 a8 8 0 0 0 16 0 V16 a8 8 0 0 1 16 0 V56 a8 8 0 0 0 16 0 V36" />
+            </g>
+            <text x="140" y="108" font-family="Fieldwork Geo, Nunito, sans-serif" font-size="12" font-weight="500" fill="#000048">medu.game</text>
+            <text x="50" y="192" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="rgba(0,0,72,.55)">X = hoogte van één lus</text>
+          </svg>
+        </div>
+      </div>
+      <div class="rule-card">
+        <h4>minimale grootte</h4>
+        <p>Schaal het horizontale logo nooit kleiner dan 110 px. Onder die grens gebruik je het solitaire beeldmerk.</p>
+        <div class="rule-vis" style="gap:28px; justify-content:space-around;">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+            <img src="brand/logos/logo-oneline.png" style="width:110px;" alt="" />
+            <span style="font-family:var(--font-mono); font-size:10px; color:var(--medu-ink-60)">110 px — minimum</span>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+            <img src="brand/icons/icon-white-bg.png" style="width:56px;" alt="" />
+            <span style="font-family:var(--font-mono); font-size:10px; color:var(--medu-ink-60)">40 px — icoon min.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="download-strip">
+      <a class="dl" href="brand/logos/logo-full.png" download>↓ logo · png</a>
+      <a class="dl" href="brand/logos/logo-oneline.png" download>↓ wordmark · png</a>
+      <a class="dl" href="brand/icons/icon-1024.png" download>↓ icoon 1024 · png</a>
+      <a class="dl" href="brand/icons/icon-blue-bg.png" download>↓ icoon op blue</a>
+      <a class="dl" href="brand/icons/icon-pink-bg.png" download>↓ icoon op pink</a>
+    </div>
+  </section>
+
+  <!-- 04 Pattern -->
+  <section class="block" id="pattern" data-screen-label="05 Pattern">
+    <div class="section-head">
+      <div class="section-num">04 — patroon</div>
+      <div>
+        <h2 class="section-title">drie patronen, één DNA. ritme, randdecoratie en vloeiende vlakken.</h2>
+        <p class="section-lede">Het patroon ontstaat door de loops van het beeldmerk te laten herhalen, te schalen of te laten stromen. Subtiel als textuur, krachtig als hero-vlak.</p>
+      </div>
+    </div>
+
+    <div class="motif-row">
+      <div class="motif m2">
+        <svg class="motif-svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g fill="none" stroke="#FFC8C7" stroke-width="32" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M-60 230 V330 a50 50 0 0 0 100 0 V170 a50 50 0 0 1 100 0 V330 a50 50 0 0 0 100 0 V170 a50 50 0 0 1 100 0 V330 a50 50 0 0 0 100 0 V230"/>
+          </g>
+        </svg>
+        <div class="caption">pattern 01 · loops</div>
+      </div>
+      <div class="motif m1">
+        <svg class="motif-svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <pattern id="zigzagBlue" width="100" height="40" patternUnits="userSpaceOnUse">
+              <rect x="6" y="6" width="42" height="14" rx="7" fill="none" stroke="#000048" stroke-width="2.4"/>
+              <rect x="56" y="6" width="42" height="14" rx="7" fill="none" stroke="#000048" stroke-width="2.4"/>
+              <rect x="-19" y="22" width="42" height="14" rx="7" fill="none" stroke="#000048" stroke-width="2.4"/>
+              <rect x="31" y="22" width="42" height="14" rx="7" fill="none" stroke="#000048" stroke-width="2.4"/>
+              <rect x="81" y="22" width="42" height="14" rx="7" fill="none" stroke="#000048" stroke-width="2.4"/>
+              <circle cx="50" cy="13" r="1.5" fill="#000048"/>
+              <circle cx="50" cy="29" r="1.5" fill="#000048"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#zigzagBlue)"/>
+        </svg>
+        <div class="caption">pattern 02 · inverted</div>
+      </div>
+      <div class="motif m3">
+        <svg class="motif-svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <pattern id="zigzagTonal" width="50" height="20" patternUnits="userSpaceOnUse">
+              <rect x="3" y="3" width="21" height="7" rx="3.5" fill="none" stroke="#FFE0E0" stroke-width="1.4"/>
+              <rect x="28" y="3" width="21" height="7" rx="3.5" fill="none" stroke="#FFE0E0" stroke-width="1.4"/>
+              <rect x="-9.5" y="11" width="21" height="7" rx="3.5" fill="none" stroke="#FFE0E0" stroke-width="1.4"/>
+              <rect x="15.5" y="11" width="21" height="7" rx="3.5" fill="none" stroke="#FFE0E0" stroke-width="1.4"/>
+              <rect x="40.5" y="11" width="21" height="7" rx="3.5" fill="none" stroke="#FFE0E0" stroke-width="1.4"/>
+              <circle cx="25" cy="6.5" r="0.8" fill="#FFE0E0"/>
+              <circle cx="25" cy="14.5" r="0.8" fill="#FFE0E0"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#zigzagTonal)" opacity="0.55"/>
+        </svg>
+        <div class="caption">pattern 03 · tonal</div>
+      </div>
+    </div>
+
+    <div class="usage-rules" style="margin-top:32px;">
+      <div class="rule-card-sm"><div class="lbl">stroke</div><p>Lijndikte ≈ 18–22% van de loop-hoogte. Altijd round caps. Nooit dunner dan 14px op screen.</p></div>
+      <div class="rule-card-sm"><div class="lbl">schaal</div><p>Loops mogen oversized — laat ze uit het kader lopen. Eén volledige zigzag per kaart is genoeg.</p></div>
+      <div class="rule-card-sm"><div class="lbl">kleur</div><p>Pink op donkerblauw (primair), blauw op pink (inverted), of pink-on-pink met 55% opacity (tonal).</p></div>
+    </div>
+  </section>
+
+  <!-- 05 Components -->
+  <section class="block" id="components" data-screen-label="06 Components">
+    <div class="section-head">
+      <div class="section-num">05 — componenten</div>
+      <div>
+        <h2 class="section-title">bouwstenen, altijd consistent met het merk.</h2>
+        <p class="section-lede">Knoppen, badges, invoervelden — gedragen door dezelfde vier kleuren, dezelfde twee fonts, dezelfde afgeronde lussen.</p>
+      </div>
+    </div>
+
+    <div class="comp-grid">
+      <div class="comp-card">
+        <h4>knoppen</h4>
+        <div class="comp-row">
+          <button class="btn btn-primary">start module →</button>
+          <button class="btn btn-secondary">bekijk les</button>
+          <button class="btn btn-ghost">meer weten</button>
+        </div>
+        <div class="comp-row" style="margin-top:14px; padding:18px; background:var(--medu-blue-dark); border-radius:12px;">
+          <button class="btn btn-pink-on-dark">probeer gratis</button>
+          <button class="btn btn-ghost" style="color:var(--medu-pink-light); border-color:var(--medu-pink-light);">inloggen</button>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <h4>labels &amp; badges</h4>
+        <div class="comp-row">
+          <span class="badge badge-pink">nieuw</span>
+          <span class="badge badge-blue">premium</span>
+          <span class="badge badge-outline">module 04</span>
+          <span class="badge badge-live">live sessie</span>
+        </div>
+        <div class="comp-row" style="margin-top:16px">
+          <span class="badge badge-outline">verpleegkunde</span>
+          <span class="badge badge-outline">spoedeisend</span>
+          <span class="badge badge-outline">farmacologie</span>
+          <span class="badge badge-outline">ethiek</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <h4>formuliervelden</h4>
+        <label class="field-label" for="em">e-mailadres</label>
+        <input class="input" id="em" type="email" placeholder="naam@ziekenhuis.nl" />
+        <label class="field-label" style="margin-top:14px;" for="ww">wachtwoord</label>
+        <input class="input" id="ww" type="password" placeholder="••••••••" />
+        <button class="btn btn-primary" style="margin-top:18px; width:100%; justify-content:center;">log in op medu.game</button>
+      </div>
+
+      <div class="comp-card">
+        <h4>leerteam · avatars</h4>
+        <div class="comp-row" style="justify-content:space-between;">
+          <div class="avatars">
+            <div class="avatar b">TK</div>
+            <div class="avatar p">LD</div>
+            <div class="avatar">MR</div>
+            <div class="avatar b">SV</div>
+            <div class="avatar" style="background:var(--medu-ink-05); color:var(--medu-blue-dark);">+9</div>
+          </div>
+          <span class="badge badge-live">13 online</span>
+        </div>
+        <p style="font-size:14px; color:var(--medu-ink-60); margin: 18px 0 0; font-weight: 300;">Tim, Lotte en 11 collega's zijn vandaag bezig met de module <strong style="color:var(--medu-blue-dark); font-weight:500;">acute cardiologie</strong>.</p>
+      </div>
+    </div>
+
+    <h3 class="block-sub">cards · lesson tiles</h3>
+    <div class="lesson-grid">
+      <article class="lesson">
+        <div class="lesson-media">
+          <svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+            <g stroke="#FFC8C7" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.8">
+              <path d="M30 210 V140 a22 22 0 0 1 44 0 V210" />
+              <path d="M84 210 V140 a22 22 0 0 1 44 0 V210" />
+            </g>
+            <g stroke="#FFE0E0" stroke-width="16" stroke-linecap="round" fill="none">
+              <path d="M20 170 V100 a22 22 0 0 1 44 0 V180 a22 22 0 0 0 44 0 V100 a22 22 0 0 1 44 0 V180 a22 22 0 0 0 44 0 V100 a22 22 0 0 1 44 0 V170" />
+            </g>
+          </svg>
+          <span class="badge badge-live mod">module 04</span>
+        </div>
+        <div class="lesson-body">
+          <div class="eyelabel">klinisch redeneren</div>
+          <h5>acute cardiologie op de SEH</h5>
+          <p>Herken ritmestoornissen en triageer onder tijdsdruk via 6 casussen.</p>
+          <div class="lesson-foot">
+            <span class="meta">22 min · Tim K.</span>
+            <div class="progress"><i></i></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson">
+        <div class="lesson-media" style="background:var(--medu-pink)">
+          <svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+            <g stroke="#000048" stroke-width="18" stroke-linecap="round" fill="none">
+              <path d="M50 190 V90 a26 26 0 0 1 52 0 V160 a26 26 0 0 0 52 0 V90 a26 26 0 0 1 52 0 V160 a26 26 0 0 0 52 0 V110" />
+            </g>
+            <circle cx="340" cy="110" r="14" fill="#000048" />
+          </svg>
+          <span class="badge mod" style="background:var(--medu-blue-dark); color:var(--medu-pink-light);">serious game</span>
+        </div>
+        <div class="lesson-body">
+          <div class="eyelabel">simulatie</div>
+          <h5>triage op de SEH-nacht</h5>
+          <p>Realtime triage-simulatie met 4 binnenkomende patiënten.</p>
+          <div class="lesson-foot">
+            <span class="meta">45 min · dr. L. de Jong</span>
+            <div class="progress"><i style="width:18%"></i></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson">
+        <div class="lesson-media" style="background:var(--medu-pink-light)">
+          <svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+            <g stroke="#000048" stroke-width="14" stroke-linecap="round" fill="none">
+              <path d="M40 200 V110 a22 22 0 0 1 44 0 V200" />
+              <path d="M100 200 V110 a22 22 0 0 1 44 0 V200" />
+              <path d="M160 200 V130 a22 22 0 0 1 44 0 V200" />
+              <path d="M220 200 V110 a22 22 0 0 1 44 0 V200" />
+              <path d="M280 200 V90 a22 22 0 0 1 44 0 V200" />
+            </g>
+          </svg>
+          <span class="badge mod" style="background:var(--medu-blue-dark); color:var(--medu-pink-light);">nieuw</span>
+        </div>
+        <div class="lesson-body">
+          <div class="eyelabel">farmacologie</div>
+          <h5>antibiotica stewardship in 15 min</h5>
+          <p>Actuele richtlijnen, klinische keuzes, korte quiz aan het eind.</p>
+          <div class="lesson-foot">
+            <span class="meta">15 min · Anne P.</span>
+            <div class="progress"><i style="width:100%; background:var(--medu-pink);"></i></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 06 Tokens -->
+  <section class="block" id="tokens" data-screen-label="07 Tokens">
+    <div class="section-head">
+      <div class="section-num">06 — spacing &amp; systeem</div>
+      <div>
+        <h2 class="section-title">ritme in getallen. een 4-punt schaal die in moodle en op marketing past.</h2>
+        <p class="section-lede">Eén spacing-ladder, vier radii, drie shadows. De naam = het aantal pixels — geen mentale conversie nodig.</p>
+      </div>
+    </div>
+
+    <div class="token-sub">spacing scale</div>
+    <div class="token-grid">
+      <div class="token-card"><div class="name">4</div><div class="sp-bar" style="width:4px;"></div><div class="meta">--space-1 · 4px · hair</div></div>
+      <div class="token-card"><div class="name">8</div><div class="sp-bar" style="width:8px;"></div><div class="meta">--space-2 · 8px · tight</div></div>
+      <div class="token-card"><div class="name">16</div><div class="sp-bar" style="width:16px;"></div><div class="meta">--space-4 · 16px · base</div></div>
+      <div class="token-card"><div class="name">24</div><div class="sp-bar" style="width:24px;"></div><div class="meta">--space-6 · 24px · comfy</div></div>
+      <div class="token-card"><div class="name">32</div><div class="sp-bar" style="width:32px;"></div><div class="meta">--space-8 · 32px · section</div></div>
+      <div class="token-card"><div class="name">56</div><div class="sp-bar" style="width:56px;"></div><div class="meta">--space-14 · 56px · block</div></div>
+      <div class="token-card"><div class="name">80</div><div class="sp-bar" style="width:80px;"></div><div class="meta">--space-20 · 80px · band</div></div>
+      <div class="token-card"><div class="name">120</div><div class="sp-bar" style="width:120px;"></div><div class="meta">--space-30 · 120px · hero</div></div>
+    </div>
+
+    <div class="token-sub">border radius</div>
+    <div class="token-grid">
+      <div class="token-card"><div class="name">small</div><div class="radius-demo" style="border-radius:6px;"></div><div class="meta">--radius-sm · 6px · input</div></div>
+      <div class="token-card"><div class="name">medium</div><div class="radius-demo" style="border-radius:12px;"></div><div class="meta">--radius-md · 12px · field</div></div>
+      <div class="token-card"><div class="name">large</div><div class="radius-demo" style="border-radius:20px;"></div><div class="meta">--radius-lg · 20px · card</div></div>
+      <div class="token-card"><div class="name">pill</div><div class="radius-demo" style="border-radius:999px; height:36px;"></div><div class="meta">--radius-pill · button</div></div>
+    </div>
+
+    <div class="token-sub">shadows</div>
+    <div class="token-grid" style="grid-template-columns:repeat(3, 1fr)">
+      <div class="token-card"><div class="name">sm</div><div class="shadow-demo" style="box-shadow:var(--shadow-sm);"></div><div class="meta">--shadow-sm · subtle lift</div></div>
+      <div class="token-card"><div class="name">md</div><div class="shadow-demo" style="box-shadow:var(--shadow-md);"></div><div class="meta">--shadow-md · card · hover</div></div>
+      <div class="token-card"><div class="name">lg</div><div class="shadow-demo" style="box-shadow:var(--shadow-lg);"></div><div class="meta">--shadow-lg · modal · focus</div></div>
+    </div>
+  </section>
+
+  <!-- 07 Icons -->
+  <section class="block" id="icons" data-screen-label="08 Icons">
+    <div class="section-head">
+      <div class="section-num">07 — iconen</div>
+      <div>
+        <h2 class="section-title">lichte outline-iconen, afgeronde uiteinden — dezelfde taal als het logo.</h2>
+        <p class="section-lede">1.75px stroke, <code style="font-family:var(--font-mono);font-size:13px;color:var(--medu-blue)">stroke-linecap: round</code>. Nooit gevuld. Lucide is de approved CDN-set.</p>
+      </div>
+    </div>
+    <div class="icon-grid">
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-6 4 12 2-6h7"/></svg><span class="lbl">pulse</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6l9-4z"/></svg><span class="lbl">safe</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg><span class="lbl">scenario</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="lbl">time</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span class="lbl">professional</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 12h3l1-2 2 4 1-2h3"/></svg><span class="lbl">monitor</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span class="lbl">module</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><span class="lbl">add</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg><span class="lbl">check</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="lbl">arrow</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg><span class="lbl">verified</span></div>
+      <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V5a4 4 0 0 1 8 0v3"/></svg><span class="lbl">secure</span></div>
+    </div>
+  </section>
+
+  <!-- 08 Web patterns -->
+  <section class="block" id="web" data-screen-label="09 Web patterns">
+    <div class="section-head">
+      <div class="section-num">08 — web patterns</div>
+      <div>
+        <h2 class="section-title">bouwblokken voor de leeromgeving en promotie-pagina's.</h2>
+        <p class="section-lede">Kant-en-klare secties die als HTML-blok in Moodle (Page/Book/Edwiser) passen.</p>
+      </div>
+    </div>
+
+    <!-- Hero B2B -->
+    <div class="web-block">
+      <div class="web-block-head"><span class="tag">hero · b2b split</span><span class="meta">home · zorgorganisaties</span></div>
+      <div class="hero-b2b">
+        <div>
+          <span class="eyebrow"><span class="pulse"></span>voor zorgorganisaties</span>
+          <h2>veilig oefenen, meetbaar groeien.</h2>
+          <p>Train je zorgteams met levensechte scenario's. ABCDE, ECG-interpretatie, (Cardiac) ALS — altijd beschikbaar, altijd bijgewerkt aan de richtlijnen.</p>
+          <div class="cta-row">
+            <button class="btn btn-primary">plan een demo →</button>
+            <button class="btn btn-ghost">bekijk scenario's</button>
+          </div>
+          <div class="proof">vertrouwd door NVIC · Tergooi MC · Gelre</div>
+        </div>
+        <div class="character-slot">
+          <img src="brand/characters/avatar-tablet-pink.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero centered dark -->
+    <div class="web-block">
+      <div class="web-block-head"><span class="tag">hero · centered dark</span><span class="meta">campagne · landing</span></div>
+      <div class="hero-centered">
+        <svg class="bg-wave" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
+          <g stroke="#FFE0E0" stroke-width="40" stroke-linecap="round" fill="none">
+            <path d="M-40 260 V140 a50 50 0 0 1 100 0 V260 a50 50 0 0 0 100 0 V140 a50 50 0 0 1 100 0 V260 a50 50 0 0 0 100 0 V140 a50 50 0 0 1 100 0 V260 a50 50 0 0 0 100 0 V140 a50 50 0 0 1 100 0 V260" />
+          </g>
+        </svg>
+        <span class="eyebrow" style="background:rgba(255,200,199,0.2); color:var(--medu-pink-light);"><span class="pulse"></span>nieuw scenario</span>
+        <h2>cardiac ALS,<br/>nu in medu<span style="color:var(--medu-pink)">.</span>game.</h2>
+        <p>Acht nieuwe casussen, direct gekoppeld aan de 2026 richtlijn. Oefen het volledige ALS-algoritme — zonder risico.</p>
+        <div style="display:flex; gap:12px; justify-content:center;">
+          <button class="btn btn-pink-on-dark">start scenario</button>
+          <button class="btn btn-ghost" style="color:var(--medu-pink-light); border-color:rgba(255,224,224,0.4);">meer weten</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo strip -->
+    <div class="web-block">
+      <div class="web-block-head"><span class="tag">social proof · logo strip</span><span class="meta">trust</span></div>
+      <div class="logo-strip">
+        <span class="caption">vertrouwd door</span>
+        <div class="logos">
+          <span class="fake-logo">NVIC</span>
+          <span class="fake-logo">Tergooi MC</span>
+          <span class="fake-logo">Gelre</span>
+          <span class="fake-logo">Pfizer</span>
+          <span class="fake-logo">Lundbeck</span>
+          <span class="fake-logo">Amgen</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature trio -->
+    <div class="web-block">
+      <div class="web-block-head"><span class="tag">feature trio</span><span class="meta">USP's</span></div>
+      <div class="feature-trio">
+        <div class="feature">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6l9-4z"/></svg></div>
+          <h4>veilig oefenen</h4>
+          <p>Maak fouten zonder gevolgen. Train onbeperkt op scenario's die in de praktijk zeldzaam maar kritisch zijn.</p>
+        </div>
+        <div class="feature">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h4>24/7 beschikbaar</h4>
+          <p>Leer tussen je diensten door. Op telefoon, tablet of computer — content die past in jouw rooster.</p>
+        </div>
+        <div class="feature">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-6 4 12 2-6h7"/></svg></div>
+          <h4>direct feedback</h4>
+          <p>Een virtuele expert beoordeelt je keuzes in real-time en onderbouwt met de achterliggende theorie.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat strip -->
+    <div class="web-block">
+      <div class="web-block-head"><span class="tag">stat strip</span><span class="meta">proof in numbers</span></div>
+      <div class="stat-strip">
+        <div class="stat"><div class="num">4.200+</div><div class="lbl">zorgprofessionals</div></div>
+        <div class="stat"><div class="num">38</div><div class="lbl">scenario's live</div></div>
+        <div class="stat"><div class="num">92%</div><div class="lbl">retentie na 3 maanden</div></div>
+        <div class="stat"><div class="num">12</div><div class="lbl">ziekenhuispartners</div></div>
+      </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="web-block">
+      <div class="web-block-head"><span class="tag">testimonials</span><span class="meta">social proof</span></div>
+      <div class="testimonial-row">
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <div class="quote">Game-based learning geeft ons de kans om kennisoverdracht op een leuke en interactieve manier te laten plaatsvinden.</div>
+          <div class="attribution">
+            <div class="avatar-circle">US</div>
+            <div><div class="name">dr. U. Strauch</div><div class="role">commissie simulatie · NVIC</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <div class="quote">Je oefent veilig verschillende patiënt-casussen, leert interactief en effectief, zonder on-site training.</div>
+          <div class="attribution">
+            <div class="avatar-circle" style="background:var(--medu-blue-dark); color:var(--medu-pink-light);">TB</div>
+            <div><div class="name">Tanja Beldman</div><div class="role">anesthesioloog · Tergooi MC</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <div class="quote">Met simulaties kun je situaties op de IC oefenen die in de dagelijkse praktijk weinig voorkomen.</div>
+          <div class="attribution">
+            <div class="avatar-circle">NS</div>
+            <div><div class="name">dr. N.F. Schroten</div><div class="role">internist-intensivist · Gelre</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="web-block">
+      <div class="web-block-head"><span class="tag">pricing · 3-tier</span><span class="meta">abonnementen</span></div>
+      <div class="pricing-row">
+        <div class="price-card">
+          <div class="name">individueel</div>
+          <div class="price">€19<small> / mnd</small></div>
+          <div class="muted">Voor de zorgprofessional die zelf wil oefenen.</div>
+          <ul>
+            <li>Toegang tot alle Healthcare scenario's</li>
+            <li>Mobiel, tablet en desktop</li>
+            <li>1 licentie · 1 jaar</li>
+          </ul>
+          <button class="btn btn-ghost" style="margin-top:auto;">registreren</button>
+        </div>
+        <div class="price-card featured">
+          <span class="featured-badge">meest gekozen</span>
+          <div class="name">team</div>
+          <div class="price">€12<small> / gebruiker / mnd</small></div>
+          <div class="muted">Voor teams tot 50 professionals.</div>
+          <ul>
+            <li>Alle Healthcare + BHV scenario's</li>
+            <li>Dashboard met voortgang per team</li>
+            <li>Single Sign-On</li>
+            <li>E-mailsupport</li>
+          </ul>
+          <button class="btn btn-pink-on-dark" style="margin-top:auto;">plan een demo</button>
+        </div>
+        <div class="price-card">
+          <div class="name">enterprise</div>
+          <div class="price">op maat</div>
+          <div class="muted">Voor ziekenhuizen en grote organisaties.</div>
+          <ul>
+            <li>Custom scenario-ontwikkeling</li>
+            <li>LTI-koppeling met eigen LMS</li>
+            <li>Onbeperkte gebruikers</li>
+            <li>Dedicated success manager</li>
+          </ul>
+          <button class="btn btn-ghost" style="margin-top:auto;">contact sales</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="web-block">
+      <div class="web-block-head"><span class="tag">faq</span><span class="meta">vragen &amp; antwoorden</span></div>
+      <div class="faq-block">
+        <details class="faq-item" open>
+          <summary>voor wie is medu.game bedoeld? <span class="plus">+</span></summary>
+          <p>Voor zorgprofessionals en BHV'ers — van verpleegkundigen en artsen tot medewerkers die bedrijfshulpverlening in hun rol hebben. Ook geschikt om bestaande e-learnings te verrijken of als voorbereiding op een fysieke cursus.</p>
+        </details>
+        <details class="faq-item">
+          <summary>hoelang krijg ik toegang? <span class="plus">+</span></summary>
+          <p>Een individuele licentie is geldig voor 1 jaar. Team- en Enterprise-abonnementen lopen op maandbasis of jaarlijks, naar keuze.</p>
+        </details>
+        <details class="faq-item">
+          <summary>werkt het op telefoon en tablet? <span class="plus">+</span></summary>
+          <p>Ja. Medu.game werkt volledig in de browser, en er is ook een mobiele app voor iOS en Android zodat je offline door scenario's kunt gaan.</p>
+        </details>
+        <details class="faq-item">
+          <summary>kan ik koppelen met ons eigen LMS? <span class="plus">+</span></summary>
+          <p>Jazeker. Onze content is beschikbaar via een LTI-koppeling. Single Sign-On is standaard op Team en Enterprise.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- CTA band -->
+    <div class="web-block">
+      <div class="web-block-head"><span class="tag">cta band</span><span class="meta">conversie</span></div>
+      <div class="cta-band">
+        <div>
+          <h3>klaar om jullie team veiliger te laten oefenen?</h3>
+          <p>30 minuten, een rondleiding door het platform, en een voorstel op maat.</p>
+        </div>
+        <div class="btns">
+          <button class="btn btn-primary">plan een demo →</button>
+          <button class="btn btn-ghost">prijzen bekijken</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 Characters -->
+  <section class="block" id="characters" data-screen-label="10 Characters">
+    <div class="section-head">
+      <div class="section-num">09 — characters</div>
+      <div>
+        <h2 class="section-title">onze cast — in beeld.</h2>
+        <p class="section-lede">3D-renders die we gebruiken in hero's, onboarding, scenario covers en empty-states. Gebruik altijd op een merkkleur, voeten op de onderrand, copy ademt links.</p>
+      </div>
+    </div>
+
+    <div class="char-hero">
+      <div class="copy">
+        <span class="eyebrow"><span class="pulse"></span>cast</span>
+        <h3>drie rollen, één leerplatform.</h3>
+        <p><strong>guide</strong> voor onboarding en marketing · <strong>arts</strong> voor klinische scenario's · <strong>ambulance</strong> voor acute zorg en BHV.</p>
+      </div>
+      <div class="img-wrap">
+        <img src="brand/characters/hero-trio.png" alt="drie medu.game characters" />
+      </div>
+    </div>
+
+    <div class="role-header"><h3>guide — turtleneck</h3><span class="role-meta">marketing · onboarding · empty states</span></div>
+    <div class="char-grid">
+      <div class="char-tile bg-db"><span class="char-tag">tablet</span><img src="brand/characters/avatar-tablet-pink.png" alt="" /></div>
+      <div class="char-tile bg-dp"><span class="char-tag">welkom</span><img src="brand/characters/expert-point-left.png" alt="" /></div>
+      <div class="char-tile bg-lp"><span class="char-tag">standing</span><img src="brand/characters/expert-standing-white.png" alt="" /></div>
+      <div class="char-tile bg-ow"><span class="char-tag">thinking</span><img src="brand/characters/expert-thinking-white.png" alt="" /></div>
+      <div class="char-tile bg-dp"><span class="char-tag">ipad</span><img src="brand/characters/expert-ipad.png" alt="" /></div>
+      <div class="char-tile bg-db"><span class="char-tag">denkend</span><img src="brand/characters/expert-think-white.png" alt="" /></div>
+      <div class="char-tile bg-lp"><span class="char-tag">desk work</span><img src="brand/characters/expert-desk-work-white.png" alt="" /></div>
+      <div class="char-tile bg-ow"><span class="char-tag">point left</span><img src="brand/characters/expert-point-left-white.png" alt="" /></div>
+    </div>
+
+    <div class="role-header"><h3>guide — pink shirt</h3><span class="role-meta">testimonials · community</span></div>
+    <div class="char-grid">
+      <div class="char-tile bg-db"><span class="char-tag">wijzen</span><img src="brand/characters/expert-point-left-pink-01.png" alt="" /></div>
+      <div class="char-tile bg-dp"><span class="char-tag">welkom</span><img src="brand/characters/expert-point-left-pink.png" alt="" /></div>
+      <div class="char-tile bg-lp"><span class="char-tag">thinking</span><img src="brand/characters/expert-thinking-pink.png" alt="" /></div>
+      <div class="char-tile bg-ow"><span class="char-tag">ipad</span><img src="brand/characters/expert-holding-ipad-01-pink.png" alt="" /></div>
+      <div class="char-tile bg-dp"><span class="char-tag">standing</span><img src="brand/characters/expert-standing-pink.png" alt="" /></div>
+      <div class="char-tile bg-db"><span class="char-tag">ipad alt</span><img src="brand/characters/expert-holding-ipad-02-pink.png" alt="" /></div>
+      <div class="char-tile bg-lp"><span class="char-tag">hunch</span><img src="brand/characters/expert-hunch-pink.png" alt="" /></div>
+      <div class="char-tile bg-ow"><span class="char-tag">desk work</span><img src="brand/characters/expert-desk-work-pink.png" alt="" /></div>
+    </div>
+
+    <div class="role-header"><h3>arts — cardiologist</h3><span class="role-meta">klinische scenario's · ICU · cardiologie</span></div>
+    <div class="char-grid">
+      <div class="char-tile bg-db"><span class="char-tag">uitleg</span><img src="brand/characters/cardiologist-point-left.png" alt="" /></div>
+      <div class="char-tile bg-dp"><span class="char-tag">standing</span><img src="brand/characters/cardiologist-standing.png" alt="" /></div>
+      <div class="char-tile bg-lp"><span class="char-tag">thinking</span><img src="brand/characters/cardiologist-thinking.png" alt="" /></div>
+      <div class="char-tile bg-ow"><span class="char-tag">hunch</span><img src="brand/characters/cardiologist-hunch.png" alt="" /></div>
+    </div>
+
+    <div class="role-header"><h3>ambulance — acute zorg</h3><span class="role-meta">reanimatie · triage · BHV</span></div>
+    <div class="char-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 720px;">
+      <div class="char-tile bg-db"><span class="char-tag">male · standing</span><img src="brand/characters/ambulance-male.png" alt="" /></div>
+      <div class="char-tile bg-dp"><span class="char-tag">female · standing</span><img src="brand/characters/ambulance-female.png" alt="" /></div>
+    </div>
+
+    <div class="usage-rules">
+      <div class="comp-card"><h4>rol per rol</h4><p><strong>guide</strong> voor marketing en onboarding. <strong>arts</strong> bij klinische content. <strong>ambulance</strong> bij acute zorg en BHV.</p></div>
+      <div class="comp-card"><h4>achtergrond</h4><p>Altijd op merkkleur: dark blue, darker pink of light pink. Nooit op een foto of niet-merkkleur.</p></div>
+      <div class="comp-card"><h4>houding</h4><p>Voeten op de onderrand uitlijnen. Rechter helft van het vlak is de natuurlijke positie.</p></div>
+    </div>
+  </section>
+
+  <!-- 10 Voice -->
+  <section class="block" id="voice" data-screen-label="11 Voice">
+    <div class="section-head">
+      <div class="section-num">10 — voice &amp; tone</div>
+      <div>
+        <h2 class="section-title">vriendelijk, vakkundig, lowercase.</h2>
+        <p class="section-lede">Het merk spreekt zorgprofessionals als gelijken aan: je-vorm, korte zinnen, geen uitroeptekens behalve in CTA's. Productnamen en de meeste UI-labels zijn lowercase.</p>
+      </div>
+    </div>
+
+    <div class="voice-table">
+      <div class="cell head">attribuut</div>
+      <div class="cell head">wel</div>
+      <div class="cell head">niet</div>
+
+      <div class="cell voice-attr">aanspreekvorm</div>
+      <div class="cell do">"je krijgt na elke beslissing directe feedback."</div>
+      <div class="cell dont">"De gebruiker ontvangt na elke beslissing directe feedback."</div>
+
+      <div class="cell voice-attr">casing</div>
+      <div class="cell do">"start je proefperiode"</div>
+      <div class="cell dont">"START JE PROEFPERIODE"</div>
+
+      <div class="cell voice-attr">claim</div>
+      <div class="cell do">"hét digitale leerplatform voor zorgprofessionals."</div>
+      <div class="cell dont">"De #1 ultieme zorgleer-app van 2026!!"</div>
+
+      <div class="cell voice-attr">cta</div>
+      <div class="cell do">"plan een demo"</div>
+      <div class="cell dont">"Klik HIER om nu direct te starten →"</div>
+
+      <div class="cell voice-attr">getallen</div>
+      <div class="cell do">"€19,95 per maand · 8,5 uur leertijd"</div>
+      <div class="cell dont">"$19.95/mo · 8.5 hours of content"</div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="foot" data-screen-label="12 Footer">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="foot-mark">
+        <img src="brand/logos/logo-oneline.png" alt="medu.game" />
+      </div>
+      <p>Hét digitale leerplatform voor zorgprofessionals — virtuele simulaties, klinisch redeneren, microleren in de zorg.</p>
+    </div>
+    <div>
+      <h5>product</h5>
+      <a href="#">scenario's</a><a href="#">simulaties</a><a href="#">moodle integratie</a><a href="#">prijzen</a>
+    </div>
+    <div>
+      <h5>system</h5>
+      <a href="ui_kits/medu-game/index.html">ui kit</a><a href="#color">kleur</a><a href="#characters">characters</a><a href="#voice">voice</a>
+    </div>
+    <div>
+      <h5>contact</h5>
+      <a href="mailto:hello@medu.health">hello@medu.health</a><a href="https://www.medu.health">www.medu.health</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
